@@ -3,6 +3,7 @@ run-name: ${{ github.actor }} is excute GitHub Actions
 on: [push]
 jobs:
   example-job:
+    runs-on: ubuntu-latest
     steps:
       - name: Connect to PostgreSQL
         run: node client.js
