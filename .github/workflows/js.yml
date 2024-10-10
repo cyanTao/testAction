@@ -1,12 +1,20 @@
-name: excute-github-actions
-run-name: ${{ github.actor }} is excute GitHub Actions
+name: 执行脚本
+run-name: ${{ github.actor }} 正在执行脚本
 on: [push]
 jobs:
   example-job:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./scripts
     steps:
-      - name: Connect to PostgreSQL
+      - name: 存储库签出到运行器
+        uses: actions/checkout@v4
+      - name: 执行脚本
         run: node client.js
         env:
           POSTGRES_HOST: postgres
           POSTGRES_PORT: 5432
+
+      - name: Run another script
+        run: ./my-other-script.sh
