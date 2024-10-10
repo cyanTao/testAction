@@ -1,5 +1,5 @@
 const fs = require('fs')
-fs.writeFileSync('./dist/index.txt', '加工为')
+fs.writeFileSync('./dist/index.txt', '加工为39547')
 // const express = require('express')
 // const xtpl = require('xtpl')
 // const bodyParser = require('body-parser')
