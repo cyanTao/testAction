@@ -10,7 +10,7 @@ jobs:
     steps:
       - name: 存储库签出到运行器
         uses: actions/checkout@v4
-      - name: 执行脚本
+      - name: 执行js脚本
         run: node client.js
         env:
           POSTGRES_HOST: postgres
