@@ -18,7 +18,8 @@ jobs:
           npm run build
 
       - name: Deploy   # 部署
-        uses: JamesIves/github-pages-deploy-action@v4.3.3
+        uses: JamesIves/github-pages-deploy-action@releases/v3
         with:
-          branch: static-pages # 部署后提交到的分支
-          folder: dist # 这里填打包好的目录名称
+          GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }} # Github的token 阮一峰老师的博客里面有介绍过
+          BRANCH: gh-pages                          # 部署到那个分支
+          FOLDER: dist                              # 要进行部署的目录
